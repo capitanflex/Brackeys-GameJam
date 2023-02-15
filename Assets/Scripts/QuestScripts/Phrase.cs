@@ -6,6 +6,7 @@ public class Phrase : MonoBehaviour
 {
     public bool questItem;
     
+    
     [TextArea(3,10)]
     public string[] sentences;
 }
