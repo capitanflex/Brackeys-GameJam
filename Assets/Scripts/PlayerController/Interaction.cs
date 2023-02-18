@@ -48,9 +48,13 @@ public class Interaction : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.E) && (hit.collider.CompareTag("QuestItem")) )
             {
-                hit.collider.GetComponent<QuestItem>().Collect();
+                if (hit.collider.GetComponent<QuestItem>().isQuestStarted)
+                {
+                    hit.collider.GetComponent<QuestItem>().Collect();
+                    print("quest started");
 
-                TakeItem(hit.collider.gameObject);
+                    TakeItem(hit.collider.gameObject);
+                }
                 
             }
             indicatorInteraction.gameObject.SetActive(true); 
@@ -68,7 +72,7 @@ public class Interaction : MonoBehaviour
 
     private void TakeItem(GameObject hit)
     {
-        if (hit.gameObject.GetComponent<QuestItem>().isQuestStarted = true)
+        if (hit.gameObject.GetComponent<QuestItem>().isQuestStarted)
         {
             pickedUpItem = hit.gameObject;
 
@@ -80,7 +84,7 @@ public class Interaction : MonoBehaviour
             hit.transform.position = pointTransform.position;
             hit.transform.rotation = pointTransform.rotation;
 
-            hit.GetComponent<Rigidbody>().isKinematic = true;
+            
             hit.GetComponent<Collider>().enabled = false;
             
         }
@@ -91,7 +95,6 @@ public class Interaction : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G ) && pickedUpItem != null)
         {
-            pickedUpItem.GetComponent<Rigidbody>().isKinematic = false;
             pickedUpItem.GetComponent<Collider>().enabled = true;
             
             pickedUpItem.transform.parent = null;
