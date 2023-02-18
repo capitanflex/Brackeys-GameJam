@@ -1,6 +1,7 @@
 using System;
 using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedMovement;
     [SerializeField] private float powerJump = 5f;
     [SerializeField] private float gravity;
-    
+
+    private SoundManager _soundManager;
     
     private float distanceToGround = 0.4f;
     private bool isFirstJump;
@@ -25,8 +27,12 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     public bool canMove = true;
-    
-    
+
+    private void Start()
+    {
+        _soundManager = FindObjectOfType<SoundManager>();
+    }
+
     private void Update()
     {
         if (canMove)
@@ -42,13 +48,16 @@ public class PlayerController : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-
+        
+        
+        
         Vector3 move = transform.forward * z + transform.right * x;
         characterController.Move(move * (speedMovement * Time.deltaTime));
         
         if (x != 0 || z != 0)
         {
             animator.SetBool("isWalking",true);
+            
         }
         else
         {
@@ -90,5 +99,10 @@ public class PlayerController : MonoBehaviour
             velocity.x = -Trap.position.x;
             velocity.z = Trap.position.z;
         }
+    }
+
+    public void StepSound()
+    {
+        _soundManager.PlaySound("Walk");
     }
 }
