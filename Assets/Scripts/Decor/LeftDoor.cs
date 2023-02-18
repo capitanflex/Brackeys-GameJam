@@ -12,6 +12,11 @@ public class LeftDoor : MonoBehaviour
     private float totalRotation = 0;
     public bool needOpen;
     
+    private void Update()
+    {
+        Rotation();
+    }
+    
     public void Rotation()
     {
         if ((Mathf.Abs(totalRotation) < Mathf.Abs(rotationDegreesAmount) && needOpen))
