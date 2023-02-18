@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 4407581876939419565}
   - component: {fileID: 5556079054436077115}
   - component: {fileID: 5748115108092969381}
+  - component: {fileID: 4010830356261063648}
   m_Layer: 6
   m_Name: default
   m_TagString: QuestItem
@@ -146,3 +147,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4010830356261063648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516245072591413576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7eb840a7a0acc04dbde688f57c855fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCoin: 0
+  isApple: 1
+  _dialogueTrigger: {fileID: 0}
+  isQuestStarted: 0

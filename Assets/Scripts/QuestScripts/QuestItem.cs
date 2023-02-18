@@ -9,7 +9,7 @@ public class QuestItem : MonoBehaviour
     public bool isQuestStarted;
     public void Collect()
     {
-        if (_dialogueTrigger.questStarted)
+        if (isQuestStarted)
         {
             if (isCoin)
             {

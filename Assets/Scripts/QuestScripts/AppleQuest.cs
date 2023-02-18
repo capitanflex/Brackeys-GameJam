@@ -21,9 +21,15 @@ public class AppleQuest : MonoBehaviour
 
     public void CollectApple()
     {
+        appleCount += 1;
         if (appleCount == appleToCompleteQuest)
         {
-            
+            gameObject.GetComponent<DialogueTrigger>().questCompleted = true;
         }
+    }
+    public void EndQuest()
+    {
+        questText.gameObject.SetActive(true);
+        GetComponent<QuestItem>().isQuestStarted = false;
     }
 }

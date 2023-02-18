@@ -5,6 +5,7 @@ public class DialogueTrigger : MonoBehaviour
 {
    [SerializeField] private TextMeshProUGUI questText;
    [SerializeField] private QuestItem[] _QuestItems;
+   [SerializeField] private OpenDoors _openDoors;
    public int itemsCount;
    public int itemsToCompleteQuest;
 
@@ -28,11 +29,13 @@ public class DialogueTrigger : MonoBehaviour
 
    public void ItemCollected()
    {
+      print("+apple");
       itemsCount += 1;
       questText.text = itemsCount.ToString();
-      if (itemsToCompleteQuest == itemsCount)
+      if (itemsToCompleteQuest <= itemsCount)
       {
          questCompleted = true;
+         _openDoors.a = true;
       }
    }
 
