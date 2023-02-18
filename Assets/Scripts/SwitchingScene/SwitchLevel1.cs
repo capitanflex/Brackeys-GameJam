@@ -3,10 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class SwitchLevel1 : MonoBehaviour
 {
-    private bool go;
+    public bool final;
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && final)
         {
             SceneManager.LoadScene(1);
         }
