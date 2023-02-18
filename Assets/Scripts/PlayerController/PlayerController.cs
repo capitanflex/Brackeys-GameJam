@@ -44,7 +44,8 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = transform.forward * z + transform.right * x;
         characterController.Move(move * (speedMovement * Time.deltaTime));
-        if (x > 0 || z > 0)
+        
+        if (x != 0 || z != 0)
         {
             animator.SetBool("isWalking",true);
         }
@@ -67,7 +68,6 @@ public class PlayerController : MonoBehaviour
     private void IsGrounded()
     {
         isGrounded = Physics.CheckSphere(checkGround.position, distanceToGround, groundMask);
-        
     }
 
     private void OnTriggerEnter(Collider other)
