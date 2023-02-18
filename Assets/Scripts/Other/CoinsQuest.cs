@@ -7,8 +7,7 @@ public class CoinsQuest : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI questText;
     [SerializeField] private int coinsToCompleteQuest;
-
-    
+    [SerializeField] private OpenDoors _openDoors;
     
     private int coinsCount;
     
@@ -25,6 +24,8 @@ public class CoinsQuest : MonoBehaviour
     {
         questText.gameObject.SetActive(true);
         GetComponent<QuestItem>().isQuestStarted = false;
+        _openDoors.a = true;
+        
     }
 
     public void CollectCoin()

@@ -68,7 +68,7 @@ public class Interaction : MonoBehaviour
 
     private void TakeItem(GameObject hit)
     {
-        if (hit.gameObject.GetComponent<QuestItem>().isQuestStarted = true)
+        if (hit.gameObject.GetComponent<QuestItem>().isQuestStarted)
         {
             pickedUpItem = hit.gameObject;
 

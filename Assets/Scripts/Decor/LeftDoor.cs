@@ -10,10 +10,11 @@ public class LeftDoor : MonoBehaviour
     public float rotationDegreesPerSecond = 45f;
     public float rotationDegreesAmount = 120f;
     private float totalRotation = 0;
+    public bool needOpen;
     
     public void Rotation()
     {
-        if (Mathf.Abs(totalRotation) < Mathf.Abs(rotationDegreesAmount))
+        if ((Mathf.Abs(totalRotation) < Mathf.Abs(rotationDegreesAmount) && needOpen))
         {
             float currentAngle = transform.rotation.eulerAngles.y;
             transform.rotation =
