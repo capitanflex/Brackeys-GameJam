@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Interaction : MonoBehaviour
 {
     private QuestItem _questItem;
-    private float _distance = 2;
+    private float _distance = 5;
     private string phrase;
 
     private GameObject pickedUpItem;
@@ -70,15 +70,12 @@ public class Interaction : MonoBehaviour
         Transform pointTransform;
         pointTransform = transformForItem.GetComponent<Transform>();
         
-        
         hit.transform.parent = transformForItem.transform;
         hit.transform.position = pointTransform.position;
         hit.transform.rotation = pointTransform.rotation;
 
         hit.GetComponent<Rigidbody>().isKinematic = true;
         hit.GetComponent<Collider>().enabled = false;
-        
-
     }
 
     private void DropItem()
@@ -90,9 +87,6 @@ public class Interaction : MonoBehaviour
             
             pickedUpItem.transform.parent = null;
             pickedUpItem = null;
-            
-            
-
         }
     }
     
