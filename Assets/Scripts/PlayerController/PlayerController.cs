@@ -16,17 +16,25 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float powerJump = 5f;
     [SerializeField] private float gravity;
     
+    
     private float distanceToGround = 0.4f;
     
     private Vector3 velocity;
 
     private bool isGrounded;
+
+    public bool canMove = true;
+    
     
     private void Update()
     {
-        MovePlayer();
-        GravityPlayerAndJump();
-        IsGrounded();
+        if (canMove)
+        {
+
+            MovePlayer();
+            GravityPlayerAndJump();
+            IsGrounded();
+        }
     }
     
     private void MovePlayer()
