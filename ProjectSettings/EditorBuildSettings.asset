@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Danil.unity
+    guid: f09a6212f4e314a45b7964bbf30abd45
+  - enabled: 1
+    path: Assets/Scenes/Dmax.unity
+    guid: 4bd597a0d6f2df047b232959b7afaf9c
   m_configObjects: {}
