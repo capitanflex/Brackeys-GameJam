@@ -7,6 +7,8 @@ public class CameraController : MonoBehaviour
     
     private float yRotation;
 
+    public bool canMove = true;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -14,13 +16,16 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        if (canMove)
+        {
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
 
-        yRotation -= mouseY;
-        yRotation = Mathf.Clamp(yRotation, -90f, 90f);
+            yRotation -= mouseY;
+            yRotation = Mathf.Clamp(yRotation, -90f, 90f);
         
-        transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
-        playerBody.Rotate(Vector3.up  * (mouseX * mouseSensetive));
+            transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
+            playerBody.Rotate(Vector3.up  * (mouseX * mouseSensetive));
+        }
     }
 }

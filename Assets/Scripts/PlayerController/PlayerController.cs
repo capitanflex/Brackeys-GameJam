@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform checkGround;
     [SerializeField] private LayerMask groundMask;
     
+    
     private float distanceToGround = 0.4f;
     public float gravity;
     private float powerJump = 5f;
@@ -14,12 +15,19 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
 
     private bool isGrounded;
+
+    public bool canMove = true;
+    
     
     private void FixedUpdate()
     {
-        MovePlayer();
-        GravityPlayerAndJump();
-        IsGrounded();
+        if (canMove)
+        {
+
+            MovePlayer();
+            GravityPlayerAndJump();
+            IsGrounded();
+        }
     }
     
     private void MovePlayer()
