@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     private PlayerController _playerController;
     private CameraController _cameraController;
+    private Interaction _interaction;
 
 
 
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         _playerController = FindObjectOfType<PlayerController>();
         _cameraController = FindObjectOfType<CameraController>();
+        _interaction = FindObjectOfType<Interaction>();
         
         if (SceneManager.GetActiveScene().buildIndex!=0)
         {
@@ -54,7 +56,9 @@ public class GameManager : MonoBehaviour
 
     public void CanMove(bool can)
     {
+        
         _playerController.canMove = can;
         _cameraController.canMove = can;
+        _interaction.canMove = can;
     }
 }
