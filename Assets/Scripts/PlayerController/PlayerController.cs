@@ -1,21 +1,28 @@
+using System;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CharacterController characterController;
-    [SerializeField] private float speedMovement;
+    [SerializeField] private float trapForce;
     [SerializeField] private Transform checkGround;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private Transform Trap;
+    [SerializeField] private Animator animator;
+    
+    [Header("Player Settings")]
+    [SerializeField] private float speedMovement;
+    [SerializeField] private float powerJump = 5f;
+    [SerializeField] private float gravity;
     
     private float distanceToGround = 0.4f;
-    public float gravity;
-    private float powerJump = 5f;
     
     private Vector3 velocity;
 
     private bool isGrounded;
     
-    private void FixedUpdate()
+    private void Update()
     {
         MovePlayer();
         GravityPlayerAndJump();
@@ -26,9 +33,17 @@ public class PlayerController : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        
+
         Vector3 move = transform.forward * z + transform.right * x;
         characterController.Move(move * (speedMovement * Time.deltaTime));
+        if (x > 0 || z > 0)
+        {
+            animator.SetBool("isWalking",true);
+        }
+        else
+        {
+            animator.SetBool("isWalking",false);
+        }
     }
 
     private void GravityPlayerAndJump()
@@ -44,5 +59,16 @@ public class PlayerController : MonoBehaviour
     private void IsGrounded()
     {
         isGrounded = Physics.CheckSphere(checkGround.position, distanceToGround, groundMask);
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Trap"))
+        {
+            velocity.y = Trap.position.y * trapForce;
+            velocity.x = -Trap.position.x;
+            velocity.z = Trap.position.z;
+        }
     }
 }
