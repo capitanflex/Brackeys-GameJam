@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     
     
     private float distanceToGround = 0.4f;
+    private bool isFirstJump;
     
     private Vector3 velocity;
 
@@ -57,9 +58,20 @@ public class PlayerController : MonoBehaviour
 
     private void GravityPlayerAndJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            velocity.y = powerJump;
+            if (isGrounded)
+            {
+                isFirstJump = false;
+                velocity.y = powerJump;
+            }
+
+            if (!isGrounded && !isFirstJump)
+            {
+                velocity.y = powerJump;
+                isFirstJump = true;
+            }
+            
         }
         velocity.y -= gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);

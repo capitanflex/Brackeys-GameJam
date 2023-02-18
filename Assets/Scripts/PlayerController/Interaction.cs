@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Interaction : MonoBehaviour
 {
     private QuestItem _questItem;
-    private float _distance = 5;
+    private float _distance = 2;
     private string phrase;
 
     private GameObject pickedUpItem;
@@ -15,8 +15,18 @@ public class Interaction : MonoBehaviour
     [SerializeField] private TextMeshProUGUI indicatorInteraction;
     
     [SerializeField] private GameObject transformForItem;
+
+    public bool canMove = true;
     
-    
+
+    private GameManager _gameManager;
+    private DialogueManager _dialogueManager;
+
+    void Awake()
+    {
+        _gameManager = FindObjectOfType<GameManager>();
+        _dialogueManager = FindObjectOfType<DialogueManager>();
+    }
 
     private void Update()
     {
@@ -27,17 +37,18 @@ public class Interaction : MonoBehaviour
     private void InterationWith()
     {
         RaycastHit hit;
-        if (Physics.Raycast(rayPosition.transform.position, rayPosition.transform.forward, out hit, _distance, questMask))
+        if (Physics.Raycast(rayPosition.transform.position, rayPosition.transform.forward, out hit, _distance, questMask) && canMove)
         {
             if (Input.GetKeyDown(KeyCode.E) && (hit.collider.CompareTag("QuestNPC")) )
             {
-                ItemQuest(hit.collider.GetComponent<Phrase>());
-                print(phrase);
-                
+                var dialogue = hit.collider.GetComponent<DialogueTrigger>();
+                dialogue.TriggerDialogue();
+                _gameManager.CanMove(false);
+
             }
             if (Input.GetKeyDown(KeyCode.E) && (hit.collider.CompareTag("QuestItem")) )
             {
-                hit.collider.GetComponent<QuestItem>().CompleteQuest();
+                hit.collider.GetComponent<QuestItem>().Collect();
 
                 TakeItem(hit.collider.gameObject);
                 
@@ -47,35 +58,33 @@ public class Interaction : MonoBehaviour
         else
         {
             indicatorInteraction.gameObject.SetActive(false);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                _dialogueManager.DisplayNextSentence();
+            }
         }
     }
-
-    private string ItemQuest(Component a)
-    {
-        if(a.GetComponent<Phrase>().questItem && pickedUpItem != null)
-        {
-            phrase = a.GetComponent<Phrase>().sentences[0];
-            DeleteItem();
-        }
-        else{
-            phrase = a.GetComponent<Phrase>().sentences[1];
-        };
-        return phrase;
-    }
+    
 
     private void TakeItem(GameObject hit)
     {
-        pickedUpItem = hit.gameObject;
+        if (hit.gameObject.GetComponent<QuestItem>().isQuestStarted = true)
+        {
+            pickedUpItem = hit.gameObject;
 
-        Transform pointTransform;
-        pointTransform = transformForItem.GetComponent<Transform>();
+            Transform pointTransform;
+            pointTransform = transformForItem.GetComponent<Transform>();
         
-        hit.transform.parent = transformForItem.transform;
-        hit.transform.position = pointTransform.position;
-        hit.transform.rotation = pointTransform.rotation;
+        
+            hit.transform.parent = transformForItem.transform;
+            hit.transform.position = pointTransform.position;
+            hit.transform.rotation = pointTransform.rotation;
 
-        hit.GetComponent<Rigidbody>().isKinematic = true;
-        hit.GetComponent<Collider>().enabled = false;
+            hit.GetComponent<Rigidbody>().isKinematic = true;
+            hit.GetComponent<Collider>().enabled = false;
+            
+        }
+
     }
 
     private void DropItem()
@@ -87,6 +96,9 @@ public class Interaction : MonoBehaviour
             
             pickedUpItem.transform.parent = null;
             pickedUpItem = null;
+            
+            
+
         }
     }
     
