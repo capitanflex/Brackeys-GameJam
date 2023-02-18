@@ -1,46 +1,61 @@
-using System;
+using TMPro;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-   public Dialogue dialogue;
+   [SerializeField] private TextMeshProUGUI questText;
+   [SerializeField] private QuestItem[] _QuestItems;
+   public int itemsCount;
+   public int itemsToCompleteQuest;
 
-   public bool haveCoinsQuest;
-   public bool haveAppleQuest;
+ 
 
    public bool questCompleted;
+   public bool questStarted;
+   
+   private DialogueManager _dialogueManager;
+
+   
+   public Dialogue dialogue;
    public Dialogue dialogueAfterQuest;
+  
 
+   private void Start()
+   {
+      _dialogueManager = FindObjectOfType<DialogueManager>();
+      questText.text = itemsCount.ToString();
+   }
 
+   public void ItemCollected()
+   {
+      itemsCount += 1;
+      questText.text = itemsCount.ToString();
+      if (itemsToCompleteQuest == itemsCount)
+      {
+         questCompleted = true;
+      }
+   }
 
    public void TriggerDialogue()
    {
-
+      
       if (!questCompleted)
       {
-         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-         if (haveCoinsQuest)
-         {
-            FindObjectOfType<CoinsQuest>().StartQuest();
-         }
+         questStarted = true;
+         _dialogueManager.StartDialogue(dialogue);
+        questText.gameObject.SetActive(true);
+        questText.text = "0";
 
-         if (haveAppleQuest)
-         {
-            FindObjectOfType<AppleQuest>().StartQuest();
-         }
+        foreach (var VARIABLE in _QuestItems)
+        {
+           print("bebra");
+           VARIABLE.isQuestStarted = true;
+        }
       }
       else
       {
-         FindObjectOfType<DialogueManager>().StartDialogue(dialogueAfterQuest);
-         if (haveCoinsQuest)
-         {
-            FindObjectOfType<CoinsQuest>().EndQuest();
-         }
-
-         if (haveAppleQuest)
-         {
-            FindObjectOfType<AppleQuest>().StartQuest();
-         }
+         _dialogueManager.StartDialogue(dialogueAfterQuest);
+        
       }
 
    }
