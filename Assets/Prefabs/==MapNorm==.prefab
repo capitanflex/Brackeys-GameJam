@@ -7110,21 +7110,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 7502eac12aa3af14490feae72ef657b5, type: 3}
---- !u!114 &227696293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4339382705812366985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f51e6fb7d884c439b675459e3cb102, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questText: {fileID: 0}
-  appleToCompleteQuest: 2
-  isQuestStarted: 0
 --- !u!114 &227696294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7137,12 +7122,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2d3f471d537a549a69c72c6df24428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questText: {fileID: 0}
+  _QuestItems: []
+  _openDoors: {fileID: 0}
+  itemsCount: 0
+  itemsToCompleteQuest: 0
+  questCompleted: 0
+  questStarted: 0
   dialogue:
     sentences: []
     name: []
-  haveCoinsQuest: 0
-  haveAppleQuest: 1
-  questCompleted: 0
   dialogueAfterQuest:
     sentences: []
     name: []
@@ -8935,6 +8924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCoin: 1
   isApple: 0
+  _dialogueTrigger: {fileID: 0}
   isQuestStarted: 0
 --- !u!114 &255378561
 MonoBehaviour:
@@ -8948,9 +8938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b0ddd8a2c07604ba36d791fc2530f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questText: {fileID: 0}
-  coinsToCompleteQuest: 2
-  _openDoors: {fileID: 6151291603846945756}
+  _dialogueTrigger: {fileID: 0}
 --- !u!4 &8981023810930969888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
@@ -11135,17 +11123,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 505dd0d20e80a344a918d9cba85e04fb, type: 3}
---- !u!114 &6151291603846945756 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2356464280927645362, guid: 505dd0d20e80a344a918d9cba85e04fb, type: 3}
-  m_PrefabInstance: {fileID: 8497748067526997358}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27f1114e573bb4141a973f5e9c2437a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &6151291603846945757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2356464280927645363, guid: 505dd0d20e80a344a918d9cba85e04fb, type: 3}
@@ -13261,9 +13238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b0ddd8a2c07604ba36d791fc2530f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questText: {fileID: 0}
-  coinsToCompleteQuest: 2
-  _openDoors: {fileID: 0}
+  _dialogueTrigger: {fileID: 0}
 --- !u!114 &462766580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13278,6 +13253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCoin: 1
   isApple: 0
+  _dialogueTrigger: {fileID: 0}
   isQuestStarted: 0
 --- !u!4 &8981023811881502908 stripped
 Transform:

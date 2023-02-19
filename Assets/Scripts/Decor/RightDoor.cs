@@ -21,7 +21,7 @@ public class RightDoor : MonoBehaviour
                 transform.rotation =
                     Quaternion.AngleAxis(currentAngle + (Time.deltaTime * -rotationDegreesPerSecond), Vector3.up);
                 totalRotation += Time.deltaTime * rotationDegreesPerSecond;
-                print("aaaaaaaa");
+               
         }
     }
 }

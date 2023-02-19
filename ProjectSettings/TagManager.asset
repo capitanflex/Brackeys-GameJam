@@ -6,6 +6,7 @@ TagManager:
   tags:
   - QuestNPC
   - QuestItem
+  - Trap
   layers:
   - Default
   - TransparentFX

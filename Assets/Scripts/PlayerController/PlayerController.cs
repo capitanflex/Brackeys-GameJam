@@ -17,22 +17,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float powerJump = 5f;
     [SerializeField] private float gravity;
 
-    private SoundManager _soundManager;
+    
     
     private float distanceToGround = 0.4f;
     private bool isFirstJump;
     
     private Vector3 velocity;
 
-    private bool isGrounded;
+    public bool isGrounded;
 
     public bool canMove = true;
-
+    
+    private SoundManager _soundManager;
     private void Start()
     {
         _soundManager = FindObjectOfType<SoundManager>();
     }
-
     private void Update()
     {
         if (canMove)
@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
         {
             if (isGrounded)
             {
+                _soundManager.PlaySound("Jump");
                 isFirstJump = false;
                 velocity.y = powerJump;
             }
@@ -101,8 +102,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void StepSound()
-    {
-        _soundManager.PlaySound("Walk");
-    }
+   
 }
