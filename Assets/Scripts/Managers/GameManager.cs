@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Animation endTimerAnim;
+    [SerializeField] public Animation endTimerAnim;
     [SerializeField] private GameObject startEndPanel;
 
     private PlayerController _playerController;
@@ -20,8 +20,16 @@ public class GameManager : MonoBehaviour
         
         if (SceneManager.GetActiveScene().buildIndex!=0)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             startEndPanel.SetActive(true);
-            endTimerAnim.Play();
+            endTimerAnim.Play("StartGame");
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            startEndPanel.SetActive(true);
+            endTimerAnim.Play("StartGame");
+            
         }
         
     }
