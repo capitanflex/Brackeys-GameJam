@@ -74,8 +74,10 @@ public class DialogueManager : MonoBehaviour
         _animator.SetBool("isOpen", false);
         _gameManager.CanMove(true);
         if (isLastDialogue)
-        { 
-            _gameManager.BackToMenu();
+        {
+            
+            _gameManager.endTimerAnim.gameObject.SetActive(true);
+            _gameManager.endTimerAnim.Play("EndEnd");
         }
         
     }
