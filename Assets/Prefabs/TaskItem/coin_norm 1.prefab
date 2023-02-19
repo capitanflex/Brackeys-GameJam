@@ -15,7 +15,7 @@ GameObject:
   m_TagString: QuestItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &670210931518706668
 Transform:
@@ -24,9 +24,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146017231714765142}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9, y: 21, z: -58}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.20837352, y: 0.20837352, z: 0.20837352}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 89268765602914996}
@@ -65,12 +65,13 @@ GameObject:
   - component: {fileID: 3020237651928062974}
   - component: {fileID: 1787841114402570090}
   - component: {fileID: 6110583467812056860}
+  - component: {fileID: 725777756}
   m_Layer: 6
   m_Name: default
   m_TagString: QuestItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &89268765602914996
 Transform:
@@ -80,7 +81,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9190450486582620559}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -150,3 +151,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8, z: 0.3}
   m_Center: {x: 0, y: 0.4, z: 0.05}
+--- !u!114 &725777756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9190450486582620559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7eb840a7a0acc04dbde688f57c855fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCoin: 1
+  isApple: 0
+  _dialogueTrigger: {fileID: 0}
+  isQuestStarted: 0

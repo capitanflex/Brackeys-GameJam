@@ -51,7 +51,7 @@ public class Interaction : MonoBehaviour
                 if (hit.collider.GetComponent<QuestItem>().isQuestStarted)
                 {
                     hit.collider.GetComponent<QuestItem>().Collect();
-                    print("quest started");
+                    
 
                     TakeItem(hit.collider.gameObject);
                 }

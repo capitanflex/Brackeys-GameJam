@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     private Queue<string> names;
 
+    public bool isLastDialogue;
+
     private GameManager _gameManager;
     
     void Awake()
@@ -71,7 +73,11 @@ public class DialogueManager : MonoBehaviour
     {
         _animator.SetBool("isOpen", false);
         _gameManager.CanMove(true);
-      
+        if (isLastDialogue)
+        { 
+            _gameManager.BackToMenu();
+        }
+        
     }
 
     

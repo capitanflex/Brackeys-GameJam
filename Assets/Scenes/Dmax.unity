@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &5588899 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1320779203741830940, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+  m_PrefabInstance: {fileID: 783176674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &22624824 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5912524161330378279, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
@@ -144,6 +149,24 @@ MonoBehaviour:
   isApple: 1
   _dialogueTrigger: {fileID: 0}
   isQuestStarted: 0
+--- !u!1 &69204018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 334026039093116659, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+  m_PrefabInstance: {fileID: 783176674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &69204022
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69204018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.6, y: 8, z: 3}
+  m_Center: {x: 0, y: 3.9999998, z: -1.7}
 --- !u!114 &92978376 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4775860891776064125, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
@@ -175,6 +198,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &156702387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4690162183270725280, guid: 591afa374e68e224695f6905704574c5, type: 3}
+  m_PrefabInstance: {fileID: 744029252}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &156702389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156702387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77831b7124f9ca24cbc249bf108d57bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &197754362 stripped
@@ -253,27 +293,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7eb840a7a0acc04dbde688f57c855fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &535050090 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 749034454928764739, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+--- !u!114 &535050095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 255378560, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
   m_PrefabInstance: {fileID: 783176674}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &535050093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535050090}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7eb840a7a0acc04dbde688f57c855fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isApple: 0
-  _dialogueTrigger: {fileID: 842445679}
-  isQuestStarted: 0
+--- !u!114 &557912366 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6151291603846945756, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+  m_PrefabInstance: {fileID: 783176674}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f1114e573bb4141a973f5e9c2437a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &637904900 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5912524162670357149, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
@@ -360,6 +401,78 @@ MonoBehaviour:
   isApple: 1
   _dialogueTrigger: {fileID: 0}
   isQuestStarted: 0
+--- !u!1001 &698025423
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5588899}
+    m_Modifications:
+    - target: {fileID: 725777756, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: _dialogueTrigger
+      value: 
+      objectReference: {fileID: 842445679}
+    - target: {fileID: 146017231714765142, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_Name
+      value: coin_norm 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670210931518706668, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+--- !u!114 &725777756 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 725777756, guid: 64ac14599ebfd8f4394b40eda2df8113, type: 3}
+  m_PrefabInstance: {fileID: 698025423}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7eb840a7a0acc04dbde688f57c855fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &743460630 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4775860891265393987, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
@@ -400,15 +513,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1730955134094506334, guid: 591afa374e68e224695f6905704574c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 132.6
+      value: -44
       objectReference: {fileID: 0}
     - target: {fileID: 1730955134094506334, guid: 591afa374e68e224695f6905704574c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 5.11
       objectReference: {fileID: 0}
     - target: {fileID: 1730955134094506334, guid: 591afa374e68e224695f6905704574c5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 167.6
+      value: 27.2
       objectReference: {fileID: 0}
     - target: {fileID: 1730955134094506334, guid: 591afa374e68e224695f6905704574c5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -460,6 +573,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: questText
+      value: 
+      objectReference: {fileID: 795696654}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: AppleQuest
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: itemsToCompleteQuest
       value: 5
       objectReference: {fileID: 0}
@@ -469,7 +590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: dialogue.name.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: _QuestItems.Array.data[0]
@@ -561,31 +682,121 @@ PrefabInstance:
       objectReference: {fileID: 2072246618}
     - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: dialogue.name.Array.data[0]
-      value: Piedestal
+      value: computer of the future
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogue.name.Array.data[1]
+      value: computer of the future
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogue.name.Array.data[2]
+      value: computer of the future
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogue.name.Array.data[3]
+      value: computer of the future
       objectReference: {fileID: 0}
     - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: "\u0421\u043E\u0431\u0435\u0440\u0438 5 \u044F\u0431\u043B\u043E\u043A"
+      value: Collect 5 apples
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: Why would I do that?
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: I will tell you all the secrets about you and our creator
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: Okay, that's interesting
       objectReference: {fileID: 0}
     - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: dialogueAfterQuest.name.Array.size
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: dialogueAfterQuest.name.Array.data[0]
-      value: Piedestal
+      value: computer of the future
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.name.Array.data[1]
+      value: computer of the future
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.name.Array.data[2]
+      value: computer of the future
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.name.Array.data[3]
+      value: computer of the future
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.name.Array.data[4]
+      value: computer of the future
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.name.Array.data[5]
+      value: computer of the future
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.name.Array.data[6]
+      value: computer of the future
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.name.Array.data[7]
+      value: computer of the future
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.name.Array.data[8]
+      value: computer of the future
       objectReference: {fileID: 0}
     - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: dialogueAfterQuest.sentences.Array.size
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: dialogueAfterQuest.sentences.Array.data[0]
-      value: "\u0421\u0443\u0439 \u0432 \u043F\u043E\u043F\u0443"
+      value: Why did i pick these fucking apples
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.sentences.Array.data[1]
+      value: Stick it in the ass ahahhahahahahhaha
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.sentences.Array.data[2]
+      value: It was a joke. Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.sentences.Array.data[3]
+      value: I will tell you the whole truth about everything
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.sentences.Array.data[4]
+      value: Thanks for stopping by
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.sentences.Array.data[5]
+      value: The main truth is that developers have run out of time
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.sentences.Array.data[6]
+      value: 'The idea of the game was this: the player is an AI, and you were going
+        through a time trial.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.sentences.Array.data[7]
+      value: There should have been 3 locations - 3 worlds of different themes
+      objectReference: {fileID: 0}
+    - target: {fileID: 227696294, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: dialogueAfterQuest.sentences.Array.data[8]
+      value: At the end of the game you had to talk to the developer and find out
+        that you are the best AI model
       objectReference: {fileID: 0}
     - target: {fileID: 255378560, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: _dialogueTrigger
@@ -699,13 +910,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5.1719
       objectReference: {fileID: 0}
+    - target: {fileID: 6151291603846945729, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 8497748067073350184, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: m_Name
       value: ==MapNorm==
       objectReference: {fileID: 0}
     - target: {fileID: 8497748067073350231, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8497748067073350231, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -758,7 +973,9 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 255378561, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
     - {fileID: 7539772511816075740, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
-    - {fileID: 227696293, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+    - {fileID: 462766579, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+    - {fileID: 8497748067521291152, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+    - {fileID: 8497748068673152524, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
 --- !u!114 &795696654 stripped
 MonoBehaviour:
@@ -862,7 +1079,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &842445675 stripped
 GameObject:
@@ -896,34 +1113,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questText: {fileID: 795696654}
   _QuestItems:
-  - {fileID: 535050093}
-  - {fileID: 1493817241}
-  _openDoors: {fileID: 0}
+  - {fileID: 535050095}
+  - {fileID: 1493817242}
+  - {fileID: 725777756}
+  _openDoors: {fileID: 557912366}
   itemsCount: 0
   itemsToCompleteQuest: 1
+  CoinQuest: 1
+  AppleQuest: 0
   questCompleted: 0
   questStarted: 0
   dialogue:
     sentences:
-    - "\u043F\u0440\u043D\u0435\u0441\u0438 \u043C\u043D\u0435 3 \u043C\u043E\u043D\u0435\u0442\u044B"
-    - "\u0445\u043E\u0440\u043E\u0448\u043E \u0434\u044F\u0434\u044F"
-    - "\u0434\u0430\u0432\u0430\u0439 \u043F\u043E\u0433\u043D\u0430\u043B \u043B\u043E\u0445
-      \u0438\u043B\u0438 \u0432 \u0440\u0435\u043F\u0443 \u0434\u0430\u043C"
+    - Bring me 3 coins and I'll let you through the gate
+    - okay daddy goblin
+    - Come on or I'll kick your ass
     name:
-    - "\u0431\u0440\u043E\u043A\u0435\u0440"
-    - AI
-    - "\u0431\u0440\u043E\u043A\u0435\u0440"
+    - goblin
+    - kit
+    - goblin
   dialogueAfterQuest:
     sentences:
-    - "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0442\u0435\u043F\u0435\u0440\u044C
-      \u043C\u043E\u0436\u0435\u0448\u044C \u0441\u044C\u0435\u0431\u0430\u0442\u044C
-      \u0432 \u0432\u043E\u0440\u043E\u0442\u0430"
-    - "\u0441\u043F\u0430\u0441\u0438\u0431\u043E \u0434\u044F\u0434\u044F"
-    - "\u0438\u0434\u0438 \u043D\u0430\u0445\u0443\u0439"
+    - Now you can get out of the gate
+    - Thanks daddy goblin
+    - Get out of here
     name:
-    - "\u0434\u044F\u0434\u044F \u0431\u0440\u043E\u043A\u0435\u0440"
-    - AI
-    - "\u0434\u044F\u0434\u044F \u0431\u0440\u043E\u043A\u0435\u0440"
+    - goblin
+    - kit
+    - goblin
 --- !u!1001 &919398100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1339,7 +1556,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1090755411 stripped
 MonoBehaviour:
@@ -1381,8 +1598,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850a1cbab4abe9846833ec0002a1a0be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
-  walkSounds: []
+  sounds:
+  - _name: Jump
+    clip: {fileID: 8300000, guid: d3d29f80378ba8e4e9c00f92fc5b5d4e, type: 3}
+    volume: 1
+    pitch: 0
+    sourse: {fileID: 0}
+    mixerGroupType: 1
+  walkSounds:
+  - _name: 1s
+    clip: {fileID: 8300000, guid: 551d550ab98e3cc4bb7793e752fe8628, type: 3}
+    volume: 0
+    pitch: 0
+    sourse: {fileID: 0}
+    mixerGroupType: 1
+  - _name: 2s
+    clip: {fileID: 8300000, guid: 18e761ff5ef14fd4588d9283fcc9b829, type: 3}
+    volume: 0
+    pitch: 0
+    sourse: {fileID: 0}
+    mixerGroupType: 1
+  - _name: 3s
+    clip: {fileID: 8300000, guid: 9c0c1f9411026f749bcb3746cd557bec, type: 3}
+    volume: 0
+    pitch: 0
+    sourse: {fileID: 0}
+    mixerGroupType: 1
+  - _name: 4s
+    clip: {fileID: 8300000, guid: 38cb68a2a49e89c46bea091d75b27976, type: 3}
+    volume: 0
+    pitch: 0
+    sourse: {fileID: 0}
+    mixerGroupType: 1
   runSounds: []
   _masterMixer: {fileID: 24300002, guid: 7bccbebbf04dfd047832477b4a1493c1, type: 2}
   _soundsMixer: {fileID: 7643310277425743096, guid: 7bccbebbf04dfd047832477b4a1493c1, type: 2}
@@ -1400,7 +1647,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1110118131 stripped
 GameObject:
@@ -1589,27 +1836,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7eb840a7a0acc04dbde688f57c855fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1493817236 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 749034454245616351, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
+--- !u!114 &1493817242 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 462766580, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}
   m_PrefabInstance: {fileID: 783176674}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1493817241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493817236}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7eb840a7a0acc04dbde688f57c855fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isApple: 0
-  _dialogueTrigger: {fileID: 842445679}
-  isQuestStarted: 0
 --- !u!114 &1534587403 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4775860890218559890, guid: 16f6d67ea2222a147abde7a419b0997c, type: 3}

@@ -9,13 +9,15 @@ public class DialogueTrigger : MonoBehaviour
    public int itemsCount;
    public int itemsToCompleteQuest;
 
- 
+   public bool CoinQuest;
+   public bool AppleQuest;
 
    public bool questCompleted;
    public bool questStarted;
    
    private DialogueManager _dialogueManager;
 
+   
    
    public Dialogue dialogue;
    public Dialogue dialogueAfterQuest;
@@ -29,13 +31,20 @@ public class DialogueTrigger : MonoBehaviour
 
    public void ItemCollected()
    {
-      print("+apple");
+      
       itemsCount += 1;
       questText.text = itemsCount.ToString();
-      if (itemsToCompleteQuest <= itemsCount)
+      if (itemsToCompleteQuest <= itemsCount && CoinQuest)
       {
+         print("+apple");
          questCompleted = true;
          _openDoors.a = true;
+      }
+
+      if (itemsToCompleteQuest <= itemsCount && AppleQuest)
+      {
+         questCompleted = true;
+         _dialogueManager.isLastDialogue = true;
       }
    }
 
@@ -45,6 +54,7 @@ public class DialogueTrigger : MonoBehaviour
       if (!questCompleted)
       {
          questStarted = true;
+         print("quest started");
          _dialogueManager.StartDialogue(dialogue);
         questText.gameObject.SetActive(true);
         questText.text = "0";
@@ -58,7 +68,7 @@ public class DialogueTrigger : MonoBehaviour
       else
       {
          _dialogueManager.StartDialogue(dialogueAfterQuest);
-        
+         
       }
 
    }
